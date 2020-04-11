@@ -1,0 +1,26 @@
+<hola [name]="nombre"></hola> 
+
+<div class="space-div">
+  <button (click)="changeMostrarComentario()"> {{ mostrarComentario ? "Ocultar" : "Mostrar" }}</button>
+  <p *ngIf="mostrarComentario">
+    Comience a editar para ver algo de magia :)
+  </p>
+</div>
+
+<div class="space-div">
+  <div>
+    <button (click)="changeDeboDinero()"> {{ deboDinero ? "No debo dinero" : "Debo dinero" }}</button>
+  </div>
+  
+  <div *ngIf="deboDinero; else elseBlock" appResaltar>Debo dinero</div>
+  <ng-template #elseBlock>No debo dinero</ng-template>
+</div>
+
+<div class="space-div">
+  <p>Mis amigos</p>
+  <ul>
+    <li *ngFor="let amigo of misAmigosSon;index as i; trackBy:trackByFn"> {{amigo}}</li>
+  </ul>
+</div>
+
+
